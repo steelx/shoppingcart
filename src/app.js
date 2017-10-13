@@ -14,6 +14,7 @@ import ProductsList from "./components/productsList";
 const middleware = applyMiddleware(logger);
 const store = createStore(reducers, middleware);
 
+
 // Dispach actions
 store.dispatch(addProduct({id:1, title: 'Apples', description: 'some red apples', price: 30}));
 store.dispatch(addProduct({id:2, title: 'Oranges', description: 'some oranges, peal them off', price: 20}));
