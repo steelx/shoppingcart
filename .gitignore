@@ -128,4 +128,6 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
+public/bundle.js
+
 # End of https://www.gitignore.io/api/node,webstorm
