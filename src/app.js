@@ -1,15 +1,13 @@
 "use strict";
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import reducers from './reducers';
+import logger from 'redux-logger';
 import {addToCart, updateCart, deleteFromCart} from "./actions/cartActions";
 import {addProduct, updateProduct} from "./actions/productsActions";
 
 // store
-const store = createStore(reducers);
-
-store.subscribe(function(){
-    console.log('state: ', store.getState())
-});
+const middleware = applyMiddleware(logger);
+const store = createStore(reducers, middleware);
 
 // Dispach actions
 store.dispatch(addProduct({id:1, title: 'Apples', description: 'some red apples', price: 30}));
