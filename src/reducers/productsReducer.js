@@ -1,5 +1,10 @@
 "use strict";
-export default function productsReducer(state=[], action={}) {
+const INIT_PRODUCTS = [
+    {id:1, title: 'Apples', description: 'some red apples', price: 30},
+    {id:2, title: 'Oranges', description: 'Peale\'em all', price: 25},
+    {id:3, title: 'Bananas', description: 'Some potassium for you', price: 20}
+];
+export default function productsReducer(state=INIT_PRODUCTS, action={}) {
     switch(action.type) {
         case 'ADD_PRODUCT':
             return state.concat(action.payload);
