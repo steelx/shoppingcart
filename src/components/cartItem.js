@@ -15,14 +15,13 @@ class CartItem extends React.Component {
                         <p>units :&nbsp;
                             <Label bsStyle='success'> {this.props.cartItem.units} </Label>
                             &nbsp;
-                            <Button bsSize='small'>+</Button>
-                            <Button bsSize='small'>-</Button>
+                            <Button bsSize='small' onClick={() => this.props.onAddUnit()}>+</Button>
+                            <Button bsSize='small' onClick={() => this.props.onDeductUnit()}>-</Button>
                         </p>
                     </Col>
                     <Col xs={6} sm={2}>
                         <Button onClick={() => this.props.handleDeleteFromCart()}
-                                bsSize='small'
-                                bsStyle='danger'>DEL</Button>
+                                bsSize='small' bsStyle='danger'>DEL</Button>
                     </Col>
                 </Row>
             </Panel>
