@@ -2,8 +2,9 @@
 import React from 'react';
 import { bindActionCreators } from 'redux'
 import {connect} from 'react-redux';
-import {deleteFromCart} from '../actions/cartActions'
-import {Col, Row, Panel, Button, Label, Badge} from 'react-bootstrap';
+import {deleteFromCart} from '../actions/cartActions';
+import {Panel} from 'react-bootstrap';
+import CartItem from "./cartItem";
 
 class Cart extends React.Component {
     renderCart() {
@@ -21,26 +22,7 @@ class Cart extends React.Component {
         return (
             this.props.cart.map(cartItem => {
               return (
-                  <Panel key={cartItem.id}>
-                      <Row>
-                          <Col xs={12} sm={6}>
-                              <h5>{cartItem.title} <Badge pullRight>Price: INR {cartItem.price}</Badge></h5>
-                          </Col>
-                          <Col xs={6} sm={4}>
-                              <p>units :&nbsp;
-                                  <Label bsStyle='success'> {cartItem.units} </Label>
-                                  &nbsp;
-                                  <Button bsSize='small'>+</Button>
-                                  <Button bsSize='small'>-</Button>
-                              </p>
-                          </Col>
-                          <Col xs={6} sm={2}>
-                              <Button onClick={this.handleDeleteFromCart.bind(this, cartItem.id)}
-                                      bsSize='small'
-                                      bsStyle='danger'>DEL</Button>
-                          </Col>
-                      </Row>
-                  </Panel>
+                  <CartItem key={cartItem.id} cartItem={cartItem} handleDeleteFromCart={this.handleDeleteFromCart.bind(this, cartItem.id)} />
               );
             })
         );
