@@ -6,13 +6,13 @@ react-redux simple shopping cart
 npm install
 ```
 
-#RUN (2 terminal tabs)
+#RUN
 ```
-1. node server.js
-2. webpack
+npm run dev
 ```
+and open in browser `http://localhost:3000/public/`
 
-###OR else just open public folder and run local server wihtout installing anything =>
+### OR else just open public folder and run local server without installing anything =>
 ```
 cd public
 http-server
