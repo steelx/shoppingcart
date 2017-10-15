@@ -1,5 +1,5 @@
 import { renderComponent , expect } from '../test_helper';
-import App from '../../src/app';
+import App from '../../src/components/productsList';
 
 describe('App' , () => {
     let component;
