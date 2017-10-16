@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --port 3000",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test": "mocha --require babel-register ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
