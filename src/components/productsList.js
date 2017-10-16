@@ -9,7 +9,6 @@ import Cart from './cart'
 
 class ProductsList extends React.Component {
     dispachAddToCart(product) {
-        console.log(product);
         this.props.addToCart(product);
     }
     renderProducts() {

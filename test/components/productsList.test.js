@@ -17,13 +17,18 @@ describe('ProductsList' , () => {
         expect(component).to.exist;
     });
 
-    it('contains cart', () => {
-        expect(component.find('aside.cart')).to.exist;
-    });
     it('contains products list', () => {
         expect(component.find('.productsList')).to.exist;
     });
-    it('shows products LIST for each product in props', () => {
+    it('shows productItem for each product in props', () => {
         expect(component.find('.productItem').length).to.equal(props.products.length);
+    });
+
+    it('initial cart is empty', () => {
+        expect(component.find('aside.cart')).to.contain('cart empty');
+    });
+    it('when clicked Add-to-cart button, updates cart', () => {
+        component.find('.productItem button').simulate('click');
+        expect(component.find('aside.cart')).to.not.contain('cart empty');
     });
 });
