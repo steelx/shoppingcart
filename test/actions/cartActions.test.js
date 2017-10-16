@@ -6,15 +6,12 @@ import {ADD_TO_CART, UPDATE_ITEM_UNITS, DELETE_FROM_CART} from '../../src/action
 const INIT_PRODUCTS = [
     {id:1, title: 'Apples', description: 'some red apples', price: 30},
     {id:2, title: 'Oranges', description: 'Peale\'em all', price: 25},
-    {id:3, title: 'Bananas', description: 'Some potassium for you', price: 20},
-    {id:5, title: 'Potatos', description: 'p for potato', price: 20},
-    {id:6, title: 'Onions', description: 'Damm, you gotta brush', price: 35},
-    {id:7, title: 'Ginger', description: 'Its good for your liver', price: 10}
+    {id:3, title: 'Bananas', description: 'Some potassium for you', price: 20}
 ];
 
 describe('CartActions' , () => {
     let store = createStore(reducers, {cart: [], products: INIT_PRODUCTS});
-    it('has correct state', () => {
+    it('addes 2 cart items, update units. Deletes 1 item. Has correct state', () => {
         let actionsPipeline = [
             {
                 type: ADD_TO_CART,
