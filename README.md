@@ -17,3 +17,8 @@ and open in browser `http://localhost:3000/public/`
 cd public
 http-server
 ```
+
+#RUN TESTS
+```
+npm run test
+```
