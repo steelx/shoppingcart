@@ -16,7 +16,7 @@ class ProductsList extends React.Component {
         return (
             this.props.products.map((p) => {
                 return (
-                    <Col xs={12} sm={6} md={4} key={p.id}>
+                    <Col className='productsList' xs={12} sm={6} md={4} key={p.id}>
                         <ProductItem handleOnAdd={this.dispachAddToCart.bind(this)} product={p} />
                     </Col>
                 );

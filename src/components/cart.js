@@ -9,7 +9,7 @@ import CartItem from "./cartItem";
 class Cart extends React.Component {
     renderCart() {
         return (
-            <Panel header='Cart' bsStyle='primary'>
+            <Panel className='cartList' header='Cart' bsStyle='primary'>
                 {this.cartList()}
             </Panel>
         );
@@ -61,14 +61,16 @@ class Cart extends React.Component {
     render() {
         if (this.props.cart.length !== 0) {
             return (
-                <aside>
+                <aside className='cart'>
                     {this.renderCart()}
                     {this.cartTotal()}
                 </aside>
             );
         }
 
-        return ('cart empty');
+        return (
+            <aside className='cart'>cart empty</aside>
+        );
     }
 }
 

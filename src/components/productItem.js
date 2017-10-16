@@ -8,7 +8,7 @@ class ProductItem extends React.Component {
         return (
             <Well>
                 <Row>
-                    <Col xs={12}>
+                    <Col xs={12} className='productItem'>
                         <h4>{this.props.product.title}</h4>
                         <p>{this.props.product.description}</p>
                         <p>Price: INR {this.props.product.price}</p>
